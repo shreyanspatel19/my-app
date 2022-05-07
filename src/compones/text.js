@@ -7,6 +7,7 @@ export default function Text(props) {
     }
     const handlon = (event) => {
         setText(event.target.value)
+        console.log(texx.toUpperCase);
         }
 
 const[texx, setText] = useState('');
@@ -30,7 +31,7 @@ const[texx, setText] = useState('');
   
   <div className="form-group">
     <label htmlFor="exampleFormControlTextarea1"><h5>{props.textarea}</h5></label>
-    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea  className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
   <div className="container"><br/>
   <button type="button" className="btn btn-info">convert to lower case</button>
