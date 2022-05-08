@@ -5,9 +5,12 @@ export default function Text(props) {
         let newtext=texx.toUpperCase();
         setText(newtext);
     }
+    const handllp = () =>{
+      let newtext=texx.toLowerCase();
+      setText(newtext);
+  }
     const handlon = (event) => {
-        setText(event.target.value)
-        console.log(texx.toUpperCase);
+        setText(event.target.value);
         }
 
 const[texx, setText] = useState('');
@@ -17,15 +20,19 @@ const[texx, setText] = useState('');
 <br/>
   <div className="form-row">
     <div className="col"><h5>{props.fn}</h5>
-      <input type="text"  onChange={handlon} className="form-control" placeholder="First name"/>
+      <input type="text" value={texx}  onChange={handlon} className="form-control" placeholder="Full name"/>
     </div>
     <div className="col"><h5>{props.ln}</h5>
-      <input type="text" value={texx}   className="form-control" placeholder="Last name"/>
+      <input type="text" value={texx.toUpperCase()}   className="form-control" placeholder="upper case"/>
+    </div>
+    <div className="col"><h5>{props.ln}</h5>
+      <input type="text" value={texx.toLowerCase()}   className="form-control" placeholder="lower case"/>
     </div>
   <br/>
   </div>
   <div className="container">
   <button type="button" onClick={handlup} className="btn btn-info">convert to upper case</button>
+  <button type="button" onClick={handllp} className="btn btn-info mx-3">convert to lower case</button>
   </div>
   <br/>
   
