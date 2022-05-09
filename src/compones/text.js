@@ -8,11 +8,19 @@ export default function Text(props) {
     const handllp = () =>{
       let newtext=texx.toLowerCase();
       setText(newtext);
-  }
+    }
     const handlon = (event) => {
         setText(event.target.value);
-        }
+    }
 
+    const handlcl = () => {
+      setText('');
+    }
+    const speak = () => {
+      let msg = new SpeechSynthesisUtterance();
+      msg.texx = texx`  `;
+      window.speechSynthesis.speak(msg);
+    }
 const[texx, setText] = useState('');
 
       return (
@@ -31,8 +39,27 @@ const[texx, setText] = useState('');
   <br/>
   </div>
   <div className="container">
-  <button type="button" onClick={handlup} className="btn btn-info">convert to upper case</button>
-  <button type="button" onClick={handllp} className="btn btn-info mx-3">convert to lower case</button>
+  <table class="table-light">
+    <tr>
+      <th scope="col"> <button type="button" onClick={handlup} className="btn btn-info">convert to upper case</button></th>
+      <th scope="col">  <button type="button" onClick={handllp} className="btn btn-info mx-3">convert to lower case</button></th>
+
+      <th scope="col">
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" />
+          <label class="btn btn-primary" onClick={handlcl} for="btnradio1">Clear</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"/>
+          <label class="btn btn-primary" for="btnradio2">Radio 2</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off"/>
+          <label class="btn btn-primary" for="btnradio3">Radio 3</label>
+        </div>
+      </th> 
+      <th scope="col">  <div class="alert alert-primary mx-2" >characters ues is :-  {texx.length}</div></th>
+      <th scope="col">  <div class="alert alert-primary mx-2" >word ues is :-  {texx.split(' ').length-1}</div></th>
+    </tr>
+  </table>
   </div>
   <br/>
   
@@ -44,6 +71,9 @@ const[texx, setText] = useState('');
   <button type="button" className="btn btn-info">convert to lower case</button>
   </div>
 
+{/* It is targetted by the button 'speak': */}
+
+<button type="submit" onClick={speak} className="btn btn-warning mx-2 my-2">Speak</button>
     </div>
   )
 }
