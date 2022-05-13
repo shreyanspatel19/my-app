@@ -91,7 +91,7 @@ let colors={
   
   <div className={`col form-group text-${props.mode==='light'?'black':'white'} `}>
     <label htmlFor="exampleFormControlTextarea1"><h5>{props.textarea}</h5></label>
-    <textarea  placeholder="Enter text " style={props.mode==='dark'?color:colors} className="form-control"   id ='mytext' rows="3"></textarea>
+    {/* <textarea  placeholder="Enter text " style={props.mode==='dark'?color:colors} className="form-control"   id ='mytext' rows="3"></textarea> */}
   </div>
   <div className="container"><br/>
   <button type="button" className={`btn btn-${props.mode==='light'?'dark':'secondary'}`} onClick={handlcopy} >copy text</button>
