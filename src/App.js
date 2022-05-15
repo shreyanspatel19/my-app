@@ -21,25 +21,20 @@ function App() {
   } 
   return (
 < >
-
-{/* <h1 className="container"> Shreyans  Area  </h1> */}
-<div className="App">
         <Router>
-        <Navbar title="React  S" mode={mode} togglemode={togglemode} contect="contect us" >ok</Navbar>
+        <div className="App">
 
+        <Navbar title="React  S" mode={mode} togglemode={togglemode}  />
+           {/* <h1 className=""> Shreyans  Area  </h1> */}
+           <h1 className={` container text-${mode==='light'?'black':'white'} `}> Shreyans  Area  </h1>
           <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<Home mode={mode}/>} />
             <Route path="/text" element={<Text fn="Enter full name :- " mode={mode} textarea="Addres :- "/>} />
             <Route path="/about" element={<About />} />
           </Routes>
-         
-          
+          </div>
+
         </Router>
-       
-
-      </div>
-{/* <About/> */}
-
     </>
   );
 }

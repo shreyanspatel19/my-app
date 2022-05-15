@@ -65,12 +65,10 @@ let colors={
   <br/>
   </div>
   <div className="container">
-  <table className="table-light">
-    <tr>
-      <th scope="col"> <button type="button" onClick={handlup} className={`btn btn-${props.mode==='light'?'dark':'secondary'}`}>convert to upper case</button></th>
-      <th scope="col">  <button type="button" onClick={handllp} className={`btn mx-2 btn-${props.mode==='light'?'dark':'secondary'}`}>convert to lower case</button></th>
+      <button type="button" onClick={handlup} className={`btn my-1 btn-${props.mode==='light'?'dark':'secondary'}`}>convert to upper case</button>
+       <button type="button" onClick={handllp} className={`btn mx-2 my-2 btn-${props.mode==='light'?'dark':'secondary'}`}>convert to lower case</button>
 
-      <th scope="col">
+     
           <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
           <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autocomplete="off" />
           <label className={`btn btn-${props.mode==='light'?'dark':'secondary'}`} onClick={handlcl} htmlFor="btnradio1">Clear</label>
@@ -81,11 +79,10 @@ let colors={
           <input type="radio" className="btn-check" onClick={handlrmv} name="btnradio" id="btnradio3"  autocomplete="off"/>
           <label className={`btn  btn-${props.mode==='light'?'dark':'secondary'}`}   htmlFor="btnradio3">Remove space</label>
         </div>
-      </th> 
-      <th scope="col">  <div className={`alert alert-${props.mode==='light'?'dark':'dark'} mx-3`} >characters ues is :-  {texx.length}</div></th>
-      <th scope="col">  <div className="alert alert-dark mx-2" >word ues is :-  {texx.split(' ').length-1}</div></th>
-    </tr>
-  </table>
+      
+       <div className={`alert my-2  alert-${props.mode==='light'?'dark':'dark'} mx-3`} >characters ues is :-  {texx.length}</div>
+       <div className="alert my-1 alert-dark mx-2" >word ues is :-  {texx.split(" ").filter((element)=>{return element.length!==0}).length}</div>
+ 
   </div>
   <br/>
   
